@@ -25,9 +25,9 @@ function arrayReplaceRecursive (arr) {
 
   if (Object.prototype.toString.call(arr) === '[object Array]') {
     retObj = [];
-    for (p in arr) {
-      retObj.push(arr[p]);
-    }
+    // for (p in arr) {
+    //   retObj.push(arr[p]);
+    // }
   } else {
     retObj = {};
     for (p in arr) {
@@ -65,7 +65,7 @@ function generatePatternJson (patternlab, pattern, patternLimit) {
 
   if (pattern.patternLineages) {
     for (var i = 0; i < pattern.patternLineages.length; i++) {
-    
+
       var regex = new RegExp(/\//, 'g');
       var thePart = pattern.patternLineages[i].lineagePath.replace(regex, '\\').split('\\').pop().split('.')[0];
       var currentPattern = getPatternByName(patternlab, thePart);
